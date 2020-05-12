@@ -1,0 +1,107 @@
+body {
+     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     color: #383838;
+     background-color: seashell;
+     overflow-x: hidden;
+}
+
+h2 {
+     font-size: 40px;
+     font-weight: bold;
+}
+
+a {
+     text-decoration: none;
+}
+
+nav {
+     background-color: #0095ff;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     height: 60px;
+}
+
+nav a{
+     color: #caeafd;
+}
+
+nav a:hover{
+     color: white;
+}
+
+nav ul {
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     width: 50%;
+}
+
+.menu-toggle {
+     display: none;
+}
+
+/* Ukuran Mobile */
+@media screen and (max-width: 576px) {
+     nav ul{
+          display: flex;
+          flex-direction: column;
+          height: 100vh;
+          position: absolute;
+          top: 0;
+          right: 0;
+          background-color: #0095ff;
+          justify-content: space-evenly;
+          transform: translateX(100%);
+          z-index: -1;
+          transition: 1.3s;
+          opacity: 0;
+     }
+
+     nav ul.slide {
+          transform: translateX(0);
+          opacity: 1;
+     }
+
+     /* Gambar Hamburger Navbar */
+     .menu-toggle {
+          height: 35px;
+          width: 50px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+     }
+     
+     .menu-toggle span {
+          width: 50px;
+          height: 5px;
+          background-color: #caeafd;
+          display: block;
+          transition: 1s;
+     }
+
+     /* Hamburger animations */
+     .menu-toggle span:first-child {
+          transform-origin: 0 0;
+     }
+
+     .menu-toggle span:last-child {
+          transform-origin: 0 100%;
+     }
+
+     .toggle span:first-child {
+          transform: translate(6px, 1px) rotate(45deg);
+     }
+
+     .toggle span:nth-child(2) {
+          transform: scale(0);
+     }
+
+     .toggle span:last-child {
+          transform: translate(6px, 5px) rotate(-45deg);
+     }
+
+}
+
